@@ -5,8 +5,16 @@ body{
     margin: 0;
     padding: 0;
 }
-p{
+/*p{
     text-align: center;
     font-style: italic;
     font-weight: bold;
+}*/
+div{
+    align-items: center;
+    text-align: justify;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    color: brown;
+    margin: 3rem;
 }
