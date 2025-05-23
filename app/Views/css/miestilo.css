@@ -5,17 +5,17 @@ body{
     margin: 0;
     padding: 0;
 }
-/*p{
-    text-align: center;
+.descrip{
     font-style: italic;
     font-weight: bold;
-}*/
+    font-size: 1.2rem;
+}
 div{
     align-items: center;
     text-align: justify;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
-    color: brown;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    color: rgb(3, 25, 4);
     margin: 3rem;
 }
 header{
@@ -24,8 +24,51 @@ header{
     text-align: center;
     padding: 20px;
 }
+.logo{
+    display: block;   
+    margin: 0 auto; 
+    max-width: 100%; 
+    border: 3px solid #69bd45;  
+    border-radius: 10px;
+    width: 20%;
+    height: 20%;
+}
+nav{
+    background-color: #4caf50;
+    padding: 10px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+nav ul li a:hover{
+    background-color: #2f8247;
+    box-shadow: cornsilk 0px 0px 15px;
+}
 section{
     padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+.contenido{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    width: 35%;
+    height: 35%;
 }
 footer{
     background-color: #4caf50;
