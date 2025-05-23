@@ -5,3 +5,8 @@ body{
     margin: 0;
     padding: 0;
 }
+p{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
