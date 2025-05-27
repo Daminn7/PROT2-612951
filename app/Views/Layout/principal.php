@@ -23,7 +23,7 @@
                          <a class="nav-link active" aria-current="page" href="#">Principal</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Quiénes somos</a>
+                        <a class="nav-link" href="#">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Acerca de</a>
@@ -37,11 +37,10 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Productos
                         </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">0km</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Usados</a></li>
                             </ul>
                     </li>
                     
@@ -59,14 +58,14 @@
     <main class="row-1">
         <?= $this->renderSection('content') ?>
     </main>
-    <footer class="row-1 fixed-bottom">
+    <footer class="row-1">
         <div class="container">
             <div>
                 <a href="https://www.facebook.com" target="_blank"><img src="<?= base_url('img/facebook.png') ?>" alt="Facebook"></a>
                 <a href="https://x.com" target="_blank"><img src="<?= base_url('img/x.png') ?>" alt="X"></a>
                 <a href="https://www.instagram.com" target="_blank"><img src="<?= base_url('img/ig.png') ?>" alt="Instagram"></a>
             </div>
-            <div>&copy; 2023 Your Company Name. All rights reserved.</div>
+            <div>&copy; 2025 MotorSpeed. Todos los derechos reservados.</div>
         </div>
     </footer>
     <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
