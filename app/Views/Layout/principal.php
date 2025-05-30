@@ -23,21 +23,21 @@
                          <a class="nav-link active" aria-current="page" href="#">Principal</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">¿Quiénes somos?</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>/quienesSomos">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>/acercade">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Registrarse</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>/registrarse">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>/login">Login</a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="disabled d-none nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Productos
                         </a>
-                            <ul class="dropdown-menu ">
+                            <ul class="disabled d-none dropdown-menu ">
                                 <li><a class="dropdown-item" href="#">0km</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Usados</a></li>
@@ -46,7 +46,7 @@
                     
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" disabled/>
                     <button class="btn btn-outline-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"      fill="currentColor" class="bi bi-search" viewBox="0 0 15 15">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                     </svg></button>
