@@ -62,7 +62,7 @@
         <img src="<?= base_url('img/toyotaSuv.png') ?>" class="card-img-top" alt="suv">
         <div class="card-body">
           <h5 class="card-title">SUV</h5>
-          <p class="card-text">Los SUV combinan espacio, potencia y seguridad en un solo vehículo. Su altura al suelo ofrece una mejor visibilidad al conducir, mientras que su interior amplio brinda mayor comodidad para pasajeros y equipaje. Ideales para familias, viajes largos o caminos difíciles, los SUV son una excelente opción para quienes buscan versatilidad, robustez y estilo en cada trayecto.</p>
+          <p class="card-text">Los SUV combinan espacio, potencia y seguridad en un solo vehículo. Ideales para familias, viajes largos o caminos difíciles, los SUV son una excelente opción para quienes buscan versatilidad, robustez y estilo en cada trayecto.</p>
         </div>
         <div class="card-footer">
       
@@ -75,7 +75,7 @@
         <img src="<?= base_url('img/pickup.png') ?>" class="card-img-top" alt="pickup">
         <div class="card-body">
           <h5 class="card-title">PickUp</h5>
-          <p class="card-text">Las pickups destacan por su fuerza, resistencia y capacidad de carga. Diseñadas para el trabajo pesado y terrenos exigentes, ofrecen una excelente combinación entre rendimiento y durabilidad. Además, los modelos actuales suman confort, tecnología y doble cabina, convirtiéndose en una opción ideal tanto para el trabajo como para el uso familiar o recreativo.</p>
+          <p class="card-text">Las pickups destacan por su fuerza, resistencia y capacidad de carga. Diseñadas para el trabajo pesado y terrenos exigentes, ofrecen una excelente combinación entre rendimiento y durabilidad.</p>
         </div>
         <div class="card-footer">
         </div> 
