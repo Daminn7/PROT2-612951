@@ -41,7 +41,7 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
+#.env -> desactivo solo para estás entregas del programa Talentos Digitales
 .vagrant
 Vagrantfile
 
@@ -84,7 +84,7 @@ phpunit
 #-------------------------
 # Composer
 #-------------------------
-vendor/
+# vendor/  -> desactivo solo para estás entregas del programa Talentos Digitales
 
 #-------------------------
 # IDE / Development Files
