@@ -11,3 +11,6 @@ $routes->get('quienesSomos','Home::quienesSomos');
 $routes->get('acercade','Home::acercade');
 $routes->get('registrarse','Home::registrarse');
 $routes->get('login', 'Home::login');
+
+//cuentas
+$routes->post('registrarse', 'UsuarioController::crearCuenta');

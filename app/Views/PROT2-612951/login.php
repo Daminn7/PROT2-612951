@@ -23,11 +23,10 @@
             </div>
 
             <div class="my-3 d-grid justify-content-center text-center ">
-                <span>¿No tienes cuenta? <button class="btn btn-link disabled"> Regístrate </button></span>
+                <span class="pb-2">¿No tienes cuenta? <a href="<?php echo base_url(); ?> registrarse">Regístrate</a></span>
                 <span class="pb-2"><button class="btn btn-link disabled">Recuperar contraseña</button></span>
 
                 <!-- DESHABILITACION
-                <span class="pb-2">¿No tienes cuenta? <a href="<?php echo base_url(); ?>/">Regístrate</a></span>
                 <span class="pb-2"><a href="<?php echo base_url(); ?>/">Recuperar contraseña</a></span>
                 -->
             </div>
