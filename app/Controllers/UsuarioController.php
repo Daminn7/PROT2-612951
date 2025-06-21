@@ -58,4 +58,46 @@ class UsuarioController extends BaseController{
         ->with('mensaje_usuario', '¡Gracias por registrarte! Por favor, revisa tu correo electrónico para activar tu cuenta.');
     }
     
+    public function guardarDatosRegistro(){
+        if ($this->request->isAJAX()) { //con Javascript
+            $data = $this->request->getJSON(true); // Obtiene los datos JSON como un array asociativo
+
+            // Elimina datos sensibles como contraseñas antes de guardar en la sesión
+            unset($data['password']);
+            unset($data['repassword']);
+            unset($data['csrf_test_name']); // Elimina el token CSRF si está presente
+
+            session()->set('registration_data', $data);
+            return $this->response->setJSON(['success' => true]);
+        }
+        return $this->response->setJSON(['success' => false, 'message' => 'Solicitud inválida']);
+    }
+
+    public function obtenerDatosRegistro(){
+        if ($this->request->isAJAX()) {
+            $data = session()->get('registration_data');
+            return $this->response->setJSON($data);
+        }
+        return $this->response->setJSON([]);
+    }
+
+    public function activar_cuenta($token) {
+        $usuariosModel = new UsuariosModel();
+        $usuario = $usuariosModel->where(['activacion_token' => $token, 'activo' => 0])->first();
+
+        if ($usuario) {
+            $usuariosModel->update($usuario['id_usuario'], [
+                'activo' => 1,
+                'activacion_token' => null, // Limpiar el token después de la activación
+            ]);
+
+            return redirect()->to(base_url('formularioCuenta'))
+            ->with('mensaje_usuario', 'Cuenta activada exitosamente. Ahora puedes iniciar sesión.');
+        }
+        
+        return redirect()->to(base_url('formularioCuenta'))
+        ->with('error_usuario', 'Por favor, intenta nuevamente más tarde o contacta al soporte si el problema persiste.');
+        
+    }
+
 }

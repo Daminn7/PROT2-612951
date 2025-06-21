@@ -14,3 +14,5 @@ $routes->get('login', 'Home::login');
 
 //cuentas
 $routes->post('registrarse', 'UsuarioController::crearCuenta');
+$routes->post('guardar_datos_registro', 'UsuarioController::guardarDatosRegistro');
+$routes->get('obtener_datos_registro', 'UsuarioController::obtenerDatosRegistro');
