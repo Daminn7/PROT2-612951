@@ -5,7 +5,8 @@
     
         <h1 class="text-center fs-4 fw-bold mt-3">Registro</h1>
 
-        <form class="form" method="POST" action="<?= base_url('registrarse');?>" autocomplete="off" >
+        <?= helper('form'); ?>
+        <form class="form" method="POST" action="<?= base_url('crearCuenta');?>" autocomplete="off" >
         <!--<fieldset disabled>-->
             <?= csrf_field(); ?>
             <div class="mb-1">
@@ -29,8 +30,8 @@
             </div>
 
             <div class="mt-2">
-                <label class="mb-1" for="usuario">Correo electrónico</label>
-                <input type="text" class="form-control" name="usuario" id="usuario" value="" required autofocus>
+                <label class="mb-1" for="email">Correo electrónico</label>
+                <input type="text" class="form-control" name="email" id="email" value="" required autofocus>
             </div>
 
             <div class="mb-1">
@@ -50,11 +51,18 @@
 
         <div class="iniciar-seccion py-2 border-0">
             <div class="text-center">
-                <button class="btn btn-outline-primary">Iniciar sesion</button>
-            <!--<a href="#">Iniciar sesion</a>-->
+                <a href="<?= base_url('login')?>"><button class="btn btn-outline-primary">Iniciar sesion</button></a>
             </div>
         </div>
     
     </div>
+
+    <?php if (session('errors')): ?>
+    <div class="alert alert-danger">
+        <?php foreach(session('errors') as $error): ?>
+            <div><?= esc($error) ?></div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
 
 <?= $this->endSection();?>
