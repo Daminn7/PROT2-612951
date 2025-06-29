@@ -255,14 +255,16 @@
                                 ¡Hola, <?= esc(session()->get('nombre') ?: 'Usuario') ?>!
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="dropdownMenuUser">
-                                <li><a class="dropdown-item custom-dropdown-item" href="<?= base_url('modificar-usuario') ?>">
-                                    <i class="bi bi-person-gear me-2"></i>Modificar usuario
-                                </a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item custom-dropdown-item text-danger" href="<?= base_url('eliminar-cuenta') ?>">
-                                    <i class="bi bi-person-x me-2"></i>Eliminar cuenta
-                                </a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <?php if (session()->get('id_roles') != 1): // Solo mostrar para usuarios no administradores ?>
+                                    <li><a class="dropdown-item custom-dropdown-item" href="<?= base_url('modificar-usuario') ?>">
+                                        <i class="bi bi-person-gear me-2"></i>Modificar usuario
+                                    </a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item custom-dropdown-item text-danger" href="<?= base_url('eliminar-cuenta') ?>">
+                                        <i class="bi bi-person-x me-2"></i>Eliminar cuenta
+                                    </a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                <?php endif; ?>
                                 <li><a class="dropdown-item custom-dropdown-item" href="<?= base_url('cerrarSesion') ?>">
                                     <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
                                 </a></li>

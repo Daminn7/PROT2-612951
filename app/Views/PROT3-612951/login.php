@@ -21,8 +21,8 @@
             </div>
 
             <div class="my-3 d-grid justify-content-center text-center ">
-                <span class="pb-2">¿No tienes cuenta? <a href="<?php echo base_url(); ?> registrarse">Regístrate</a></span>
-                <span class="pb-2"><a href="<?echo base_url('password_request')?>"><button class="btn btn-link">Recuperar contraseña</button></a></span>
+                <span class="pb-2">¿No tienes cuenta? <a href="<?php echo base_url('registrarse'); ?>">Regístrate</a></span>
+                <span class="pb-2"><a href="<?= base_url('formularioRecuperacion'); ?>" class="btn btn-link">Recuperar contraseña</a></span>
             </div>
         </form>
 
