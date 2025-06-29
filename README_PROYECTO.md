@@ -2,6 +2,19 @@
 
 Sistema web desarrollado con CodeIgniter 4 para la gestión de usuarios y autenticación.
 
+## 🎓 **PARA PROFESORES/EVALUADORES**
+
+**Este proyecto está listo para ejecutar SIN INSTALACIONES.**
+
+### ⚡ **Acceso rápido:**
+1. Extraer en `C:\xampp\htdocs\`
+2. Abrir: `http://localhost/modulo-2/public`
+3. ¡Listo para evaluar!
+
+📖 **Ver**: [PARA_PROFESORES.md](PARA_PROFESORES.md) - Guía completa de evaluación
+
+---
+
 ## 🚀 Características
 
 - Sistema de autenticación completo (login, registro, recuperación de contraseña)
@@ -146,3 +159,20 @@ email.SMTPPort = 587
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT.
+
+## ⚠️ **IMPORTANTE - Error común al descargar**
+
+Si al abrir el proyecto aparece un error como:
+```
+Failed to open stream: No such file or directory in vendor/composer/autoload_real.php
+```
+
+**Solución:**
+1. Eliminar la carpeta `vendor` (si existe)
+2. Ejecutar `composer install` en la raíz del proyecto
+3. O usar el script automático: `instalar.bat` (Windows) o `instalar.sh` (Linux/Mac)
+
+### **Para evaluadores sin Composer:**
+1. Descargar e instalar Composer desde: https://getcomposer.org/download/
+2. Ejecutar `composer install` en la carpeta del proyecto
+3. El proyecto funcionará inmediatamente después
