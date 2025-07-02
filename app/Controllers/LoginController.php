@@ -76,7 +76,7 @@ class LoginController extends BaseController{
     }
 
     public function sendResetLinkEmail() {
-        $rules =[
+        $rules = [
             'email' => 'required|max_length[100]|valid_email'
         ];
         if (!$this->validate($rules)) {
@@ -96,18 +96,40 @@ class LoginController extends BaseController{
                 'reset_token_expiracion' => $expireAt->format('Y-m-d H:i:s'),
             ]);
 
+            $url = base_url('password_reset/' . $token);
+            
+            // Enviar email de recuperación
             $email = \Config\Services::email();
             $email->setTo($post['email']);
-            $email->setSubject('Recuperación de contraseña');
+            $email->setSubject('Recuperación de contraseña - MotorSpeed');
 
-            $url = base_url('password_reset/' . $token);
             $body = '<p>Estimado/a ' . $usuario['nombre'] . ',</p>';
-            $body .= "<p>Se ha solicitado un reinicio de contraseña.<br>Para restaurar la contraseña, visita el siguiente enlace:  <a href='$url'>$url</a></p>";
+            $body .= "<p>Se ha solicitado un reinicio de contraseña para tu cuenta en MotorSpeed.</p>";
+            $body .= "<p>Para restaurar la contraseña, visita el siguiente enlace:</p>";
+            $body .= "<p><a href='$url' style='background-color: #baff39; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Restablecer Contraseña</a></p>";
+            $body .= "<p>O copia y pega este enlace en tu navegador:</p>";
+            $body .= "<p>$url</p>";
+            $body .= "<p>Este enlace expirará en 1 hora por seguridad.</p>";
+            $body .= "<p>Si no solicitaste este cambio, puedes ignorar este correo.</p>";
+            $body .= "<hr>";
+            $body .= "<p><small>Saludos,<br>Equipo MotorSpeed</small></p>";
 
             $email->setMessage($body);
-            $email->send();
+            
+            // Intentar enviar el email y verificar si fue exitoso
+            if ($email->send()) {
+                log_message('info', 'Email de recuperación enviado a: ' . $post['email']);
+                return redirect()->to(base_url('login'))
+                    ->with('mensaje_usuario', 'Se ha enviado un correo electrónico con instrucciones para restablecer tu contraseña. Revisa tu bandeja de entrada y spam.');
+            } else {
+                // Registrar el error para debugging
+                log_message('error', 'Error enviando email de recuperación: ' . $email->printDebugger(['headers', 'subject', 'body']));
+                return redirect()->back()->withInput()
+                    ->with('error_usuario', 'Hubo un problema enviando el correo. Por favor, inténtalo nuevamente o contacta al soporte.');
+            }
         }
 
+        // Aunque el usuario no exista, devolvemos un mensaje genérico por seguridad
         return redirect()->to(base_url('login'))
         ->with('mensaje_usuario', 'Se ha enviado un correo electrónico con instrucciones para restablecer tu contraseña.');
     }

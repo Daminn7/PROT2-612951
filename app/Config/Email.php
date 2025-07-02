@@ -4,6 +4,17 @@ namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
+/**
+ * Configuración de Email para MotorSpeed
+ * 
+ * Esta configuración está lista para producción y utiliza Gmail SMTP
+ * para el envío de correos electrónicos de recuperación de contraseña.
+ * 
+ * IMPORTANTE: Asegúrese de que:
+ * 1. La cuenta de Gmail tenga habilitada la verificación de 2 pasos
+ * 2. Se use una contraseña de aplicación específica (no la contraseña normal)
+ * 3. La cuenta de Gmail permita aplicaciones menos seguras o use OAuth2
+ */
 class Email extends BaseConfig
 {
     public string $fromEmail  = 'yeah13.bts@gmail.com';
